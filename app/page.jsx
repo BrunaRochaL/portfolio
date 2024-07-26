@@ -15,22 +15,24 @@ const Home = () => {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
             <h1 className="h1 mb-6">
-              Hello I'm <br /> <span className="text-accent">Luke Coleman</span>
+              Olá,sou
+              <br /> <span className="text-accent">Bruna Rocha</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiences and I am
-              proficient in various programming languages and technologies.
+              Desenvolvedora de software apaixonada por criar experiências
+              digitais elegantes, com proficiência em diversas linguagens de
+              programação e tecnologias.
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
+              <a
+                href="/Bruna_Rocha_CV.pdf"
+                download
+                className="uppercase flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-300 hover:text-black transition-all duration-500"
               >
-                <span>Download CV</span>
+                <span>BAIXAR CV</span>
                 <FiDownload className="text-xl" />
-              </Button>
+              </a>
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"

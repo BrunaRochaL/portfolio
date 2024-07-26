@@ -7,47 +7,58 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaBootstrap,
+  FaAmazon,
+  FaGithub,
+  FaGit,
+  FaPython,
+  FaFlask,
+  FaDocker,
+  FaUbuntu,
+  FaLinux,
+  FaWindows,
 } from "react-icons/fa";
 
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
 // about data
 const about = {
-  title: "About me",
+  title: "Sobre",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Me chamo Bruna Rocha, Desenvolvedora de Software júnior e apaixonada pela área de tecnologia. Sou estudante de Análise e Desenvolvimento de Sistemas e estou sempre buscando desafios para crescer profissionalmente.",
   info: [
     {
-      fieldName: "Name",
-      fieldValue: "Luke Coleman",
+      fieldName: "Nome",
+      fieldValue: "Bruna Rocha",
     },
     {
-      fieldName: "Phone",
-      fieldValue: "(+40) 321 654 678",
+      fieldName: "Nacionalidade",
+      fieldValue: "Brasileira",
     },
     {
-      fieldName: "Experience",
-      fieldValue: "12+ Years",
+      fieldName: "Idade",
+      fieldValue: "23 anos",
     },
     {
-      fieldName: "Skype",
-      fieldValue: "luke.01",
+      fieldName: "Telefone",
+      fieldValue: "(+55) 53 984798240",
     },
     {
-      fieldName: "Nationality",
-      fieldValue: "American",
+      fieldName: "Experiência",
+      fieldValue: "2+ anos",
     },
+
     {
       fieldName: "Email",
-      fieldValue: "luke.01@gmail.com",
+      fieldValue: "brunarochadev@gmail.com",
     },
     {
       fieldName: "Freelance",
-      fieldValue: "Available",
+      fieldValue: "Disponível",
     },
     {
-      fieldName: "Languages",
-      fieldValue: "English, Spanish",
+      fieldName: "Idiomas",
+      fieldValue: "Inglês (avançado)",
     },
   ],
 };
@@ -55,39 +66,29 @@ const about = {
 // experience data
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title: "My experience",
+  title: "Experiências profissionais",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Possuo ampla experiência em desenvolvimento de software, abrangendo tanto front-end quanto back-end, com habilidades em análise, resolução de problemas complexos e colaboração em equipe.",
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Preveni",
+      position: "Software Developer",
+      duration: "2023 - Atualmente",
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
+      company: "Projeto voluntário",
+      position: "Rolê da Mariquinha",
+      duration: "2023",
     },
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
+      company: "GEBRAS",
+      position: "Gestão de energia",
+      duration: "04/2022 - 12/2022",
+    },
+    {
+      company: "Fabio Vianna Agronegóciosa",
+      position: "Desenhista Projetista",
       duration: "2020 - 2021",
-    },
-    {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
     },
   ],
 };
@@ -95,48 +96,51 @@ const experience = {
 // education data
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "My education",
+  title: "Escolaridade",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Estudante de Análise e Desenvolvimento de Sistemas na UNICESUSC em Florianópolis/SC, onde adquiri uma sólida base em diversas áreas do desenvolvimento de software.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "UNICESUSC",
+      degree: "Análise e Desenvolvimento de Sistemas",
+      duration: "01/2023 - 12/2024",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "Curso online - Udemy",
+      degree: "Formação Node.js",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
+      institution: "Curso Online - Alura",
+      degree: "HTML5, CSS3 e Javascript (Formulários e Tabelas)",
     },
     {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
+      institution: "Curso Online - Alura",
+      degree: "HTML5, CSS3 e Javascript (Criação de página)",
     },
     {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
+      institution: "Curso Online - Alura",
+      degree: "HTML5, CSS3 e Javascript (Posicionamento e navegação)",
     },
     {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "Curso Online - Alura",
+      degree: "Formação Python",
+    },
+    {
+      institution: "Bradesco Escola Virtual",
+      degree: "LGPD",
+    },
+    {
+      institution: "Bradesco Escola Virtual",
+      degree: "Segurança da Informação",
     },
   ],
 };
 
 // skills data
 const skills = {
-  title: "My skills",
+  title: "Habilidades",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Possuo conhecimentos em Python, JavaScript, Node.js, HTML, CSS, React.js, bancos de Dados relacionais e não-relacionais, API RESTful e Express, o que me capacita a criar e manter sistemas web completos e mantê-los em operação.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -155,20 +159,48 @@ const skills = {
       name: "react.js",
     },
     {
-      icon: <SiNextdotjs />,
-      name: "next.js",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
+      icon: <FaBootstrap />,
+      name: "bootstrap",
     },
     {
       icon: <FaNodeJs />,
       name: "node.js",
     },
     {
+      icon: <FaPython />,
+      name: "Python",
+    },
+    {
+      icon: <FaFlask />,
+      name: "Flask",
+    },
+    {
       icon: <FaFigma />,
       name: "figma",
+    },
+    {
+      icon: <FaGit />,
+      name: "Git",
+    },
+    {
+      icon: <FaGithub />,
+      name: "Github",
+    },
+    {
+      icon: <FaAmazon />,
+      name: "AWS",
+    },
+    {
+      icon: <FaDocker />,
+      name: "Docker",
+    },
+    {
+      icon: <FaLinux />,
+      name: "Linux",
+    },
+    {
+      icon: <FaWindows />,
+      name: "Windows",
     },
   ],
 };
@@ -201,10 +233,10 @@ const Resume = () => {
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="about">About me</TabsTrigger>
+            <TabsTrigger value="experience">Experiência</TabsTrigger>
+            <TabsTrigger value="education">Escolaridade</TabsTrigger>
+            <TabsTrigger value="skills">Habilidades</TabsTrigger>
+            <TabsTrigger value="about">Sobre</TabsTrigger>
           </TabsList>
 
           {/* content */}
@@ -213,7 +245,7 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[700px] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -245,7 +277,7 @@ const Resume = () => {
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[900px] text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -257,7 +289,10 @@ const Resume = () => {
                           className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <h3
+                            className="text-lg max-w-[260px] min-h-[60px] text-center lg:text-left"
+                            style={{ lineHeight: "1.45rem" }}
+                          >
                             {item.degree}
                           </h3>
                           <div className="flex items-center gap-3">
@@ -275,10 +310,10 @@ const Resume = () => {
 
             {/* skills */}
             <TabsContent value="skills" className="w-full h-full">
-              <div className="flex flex-col gap-[30px]">
+              <div className="flex flex-col gap-[30px] mb-20">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  <p className="max-w-[700px] text-white/60 mx-auto xl:mx-0">
                     {skills.description}
                   </p>
                 </div>

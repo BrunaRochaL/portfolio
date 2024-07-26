@@ -6,30 +6,30 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Development",
+    title: "Front-End",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Desenvolvimento de interfaces de usuário dinâmicas e responsivas utilizando React.js, JavaScript, Html5, Css3, EJS e Bootstrap. Criação de componentes reutilizáveis, gestão de estado com Redux e integração com APIs RESTful, além de estilização eficiente com Bootstrap.",
     href: "",
   },
   {
     num: "02",
     title: "UI/UX Design",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Criação de designs intuitivos para aplicações web e móveis utilizando ferramentas como Figma para validar a experiência do usuário. Baseado nos princípios de usabilidade e avaliação heurística, assegurando uma experiência de usuário eficiente e agradável.",
     href: "",
   },
   {
     num: "03",
-    title: "Logo Design",
+    title: "Back-End",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Implementação de servidores e APIs robustas com Node.js, Express.js e Flask. Integração de bancos de dados relacionais e não relacionais, autenticação de usuários e manipulação de dados em tempo real. Gerenciamento de código com Git e GitHub, e deploy automatizado utilizando AWS.",
     href: "",
   },
   {
     num: "04",
-    title: "SEO",
+    title: "Full-Stack",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Utização de combinações de tecnologias de front-end (React.js, Next.js, JavaScript, EJS, Bootstrap) e back-end (Node.js, Adonis.js, Express.js, Sequelize, Flask). Integração com bancos de dados relacionais (MySQL, PostgreSQL) e não relacionais (MongoDB). Gerenciamento de código e deploy automatizado.",
     href: "",
   },
 ];
