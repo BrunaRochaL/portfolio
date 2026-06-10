@@ -1,242 +1,96 @@
 "use client";
 
 import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaNodeJs,
-  FaBootstrap,
-  FaAmazon,
-  FaGithub,
-  FaGit,
-  FaPython,
-  FaFlask,
-  FaDocker,
-  FaUbuntu,
-  FaLinux,
-  FaWindows,
-} from "react-icons/fa";
-
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
-
-// about data
-const about = {
-  title: "Sobre",
-  description:
-    "Me chamo Bruna Rocha, Desenvolvedora de Software júnior e apaixonada pela área de tecnologia. Sou estudante de Análise e Desenvolvimento de Sistemas e estou sempre buscando desafios para crescer profissionalmente.",
-  info: [
-    {
-      fieldName: "Nome",
-      fieldValue: "Bruna Rocha",
-    },
-    {
-      fieldName: "Nacionalidade",
-      fieldValue: "Brasileira",
-    },
-    {
-      fieldName: "Idade",
-      fieldValue: "23 anos",
-    },
-    {
-      fieldName: "Telefone",
-      fieldValue: "(+55) 53 984798240",
-    },
-    {
-      fieldName: "Experiência",
-      fieldValue: "2+ anos",
-    },
-
-    {
-      fieldName: "Email",
-      fieldValue: "brunarochadev@gmail.com",
-    },
-    {
-      fieldName: "Freelance",
-      fieldValue: "Disponível",
-    },
-    {
-      fieldName: "Idiomas",
-      fieldValue: "Inglês (avançado)",
-    },
-  ],
-};
-
-// experience data
-const experience = {
-  icon: "/assets/resume/badge.svg",
-  title: "Experiências profissionais",
-  description:
-    "Possuo ampla experiência em desenvolvimento de software, abrangendo tanto front-end quanto back-end, com habilidades em análise, resolução de problemas complexos e colaboração em equipe.",
-  items: [
-    {
-      company: "Preveni",
-      position: "Software Developer",
-      duration: "2023 - Atualmente",
-    },
-    {
-      company: "Projeto voluntário",
-      position: "Rolê da Mariquinha",
-      duration: "2023",
-    },
-    {
-      company: "GEBRAS",
-      position: "Gestão de energia",
-      duration: "04/2022 - 12/2022",
-    },
-    {
-      company: "Fabio Vianna Agronegóciosa",
-      position: "Desenhista Projetista",
-      duration: "2020 - 2021",
-    },
-  ],
-};
-
-// education data
-const education = {
-  icon: "/assets/resume/cap.svg",
-  title: "Escolaridade",
-  description:
-    "Estudante de Análise e Desenvolvimento de Sistemas na UNICESUSC em Florianópolis/SC, onde adquiri uma sólida base em diversas áreas do desenvolvimento de software.",
-  items: [
-    {
-      institution: "UNICESUSC",
-      degree: "Análise e Desenvolvimento de Sistemas",
-      duration: "01/2023 - 12/2024",
-    },
-    {
-      institution: "Curso online - Udemy",
-      degree: "Formação Node.js",
-    },
-    {
-      institution: "Curso Online - Alura",
-      degree: "HTML5, CSS3 e Javascript (Formulários e Tabelas)",
-    },
-    {
-      institution: "Curso Online - Alura",
-      degree: "HTML5, CSS3 e Javascript (Criação de página)",
-    },
-    {
-      institution: "Curso Online - Alura",
-      degree: "HTML5, CSS3 e Javascript (Posicionamento e navegação)",
-    },
-    {
-      institution: "Curso Online - Alura",
-      degree: "Formação Python",
-    },
-    {
-      institution: "Bradesco Escola Virtual",
-      degree: "LGPD",
-    },
-    {
-      institution: "Bradesco Escola Virtual",
-      degree: "Segurança da Informação",
-    },
-  ],
-};
-
-// skills data
-const skills = {
-  title: "Habilidades",
-  description:
-    "Possuo conhecimentos em Python, JavaScript, Node.js, HTML, CSS, React.js, bancos de Dados relacionais e não-relacionais, API RESTful e Express, o que me capacita a criar e manter sistemas web completos e mantê-los em operação.",
-  skillList: [
-    {
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "css 3",
-    },
-    {
-      icon: <FaJs />,
-      name: "javascript",
-    },
-    {
-      icon: <FaReact />,
-      name: "react.js",
-    },
-    {
-      icon: <FaBootstrap />,
-      name: "bootstrap",
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "node.js",
-    },
-    {
-      icon: <FaPython />,
-      name: "Python",
-    },
-    {
-      icon: <FaFlask />,
-      name: "Flask",
-    },
-    {
-      icon: <FaFigma />,
-      name: "figma",
-    },
-    {
-      icon: <FaGit />,
-      name: "Git",
-    },
-    {
-      icon: <FaGithub />,
-      name: "Github",
-    },
-    {
-      icon: <FaAmazon />,
-      name: "AWS",
-    },
-    {
-      icon: <FaDocker />,
-      name: "Docker",
-    },
-    {
-      icon: <FaLinux />,
-      name: "Linux",
-    },
-    {
-      icon: <FaWindows />,
-      name: "Windows",
-    },
-  ],
-};
+  SiReact,
+  SiTypescript,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiSass,
+  SiTailwindcss,
+  SiBootstrap,
+  SiRedux,
+  SiVite,
+  SiVitest,
+  SiNodedotjs,
+  SiNestjs,
+  SiAdonisjs,
+  SiPython,
+  SiDjango,
+  SiFlask,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiRedis,
+  SiDocker,
+  SiAmazonaws,
+  SiMicrosoftazure,
+  SiDatadog,
+  SiGit,
+  SiBitbucket,
+} from "react-icons/si";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
+
+const skillList = [
+  { icon: <SiReact />, name: "React" },
+  { icon: <SiTypescript />, name: "TypeScript" },
+  { icon: <SiJavascript />, name: "JavaScript" },
+  { icon: <SiHtml5 />, name: "HTML5" },
+  { icon: <SiCss3 />, name: "CSS3" },
+  { icon: <SiSass />, name: "SCSS" },
+  { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+  { icon: <SiBootstrap />, name: "Bootstrap" },
+  { icon: <SiRedux />, name: "Redux" },
+  { icon: <SiVite />, name: "Vite" },
+  { icon: <SiVitest />, name: "Vitest" },
+  { icon: <SiNodedotjs />, name: "Node.js" },
+  { icon: <SiNestjs />, name: "NestJS" },
+  { icon: <SiAdonisjs />, name: "AdonisJS" },
+  { icon: <SiPython />, name: "Python" },
+  { icon: <SiDjango />, name: "Django" },
+  { icon: <SiFlask />, name: "Flask" },
+  { icon: <SiPostgresql />, name: "PostgreSQL" },
+  { icon: <SiMysql />, name: "MySQL" },
+  { icon: <SiMongodb />, name: "MongoDB" },
+  { icon: <SiRedis />, name: "Redis" },
+  { icon: <SiDocker />, name: "Docker" },
+  { icon: <SiAmazonaws />, name: "AWS" },
+  { icon: <SiMicrosoftazure />, name: "Azure" },
+  { icon: <SiDatadog />, name: "Datadog" },
+  { icon: <SiGit />, name: "Git" },
+  { icon: <SiBitbucket />, name: "Bitbucket" },
+];
 
 const Resume = () => {
+  const { t } = useLanguage();
+  const r = t.resume;
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-      }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }}
+      className="flex min-h-[70vh] items-center justify-center py-12 xl:py-8"
     >
       <div className="container mx-auto">
         <Tabs
           defaultValue="experience"
-          className="flex flex-col xl:flex-row gap-[60px]"
+          className="flex flex-col gap-[60px] xl:flex-row"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="experience">Experiência</TabsTrigger>
-            <TabsTrigger value="education">Escolaridade</TabsTrigger>
-            <TabsTrigger value="skills">Habilidades</TabsTrigger>
-            <TabsTrigger value="about">Sobre</TabsTrigger>
+          <TabsList className="mx-auto flex w-full max-w-[380px] flex-col gap-6 xl:mx-0">
+            <TabsTrigger value="experience">{r.tabs.experience}</TabsTrigger>
+            <TabsTrigger value="education">{r.tabs.education}</TabsTrigger>
+            <TabsTrigger value="skills">{r.tabs.skills}</TabsTrigger>
+            <TabsTrigger value="about">{r.tabs.about}</TabsTrigger>
           </TabsList>
 
           {/* content */}
@@ -244,30 +98,27 @@ const Resume = () => {
             {/* experience */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[700px] text-white/60 mx-auto xl:mx-0">
-                  {experience.description}
+                <h3 className="text-4xl font-bold text-metal">{r.experience.title}</h3>
+                <p className="mx-auto max-w-[700px] text-white/60 xl:mx-0">
+                  {r.experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {experience.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                        >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.position}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            {/* dot */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.company}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
+                  <ul className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
+                    {r.experience.items.map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex h-[184px] flex-col items-center justify-center gap-1 rounded-xl border border-white/5 bg-secondary px-10 py-6 transition-colors hover:border-accent/40 lg:items-start"
+                      >
+                        <span className="text-accent">{item.duration}</span>
+                        <h3 className="min-h-[60px] max-w-[260px] text-center text-xl lg:text-left">
+                          {item.position}
+                        </h3>
+                        <div className="flex items-center gap-3">
+                          <span className="h-[6px] w-[6px] rounded-full bg-accent"></span>
+                          <p className="text-white/60">{item.company}</p>
+                        </div>
+                      </li>
+                    ))}
                   </ul>
                 </ScrollArea>
               </div>
@@ -276,93 +127,101 @@ const Resume = () => {
             {/* education */}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="max-w-[900px] text-white/60 mx-auto xl:mx-0">
-                  {education.description}
+                <h3 className="text-4xl font-bold text-metal">{r.education.title}</h3>
+                <p className="mx-auto max-w-[900px] text-white/60 xl:mx-0">
+                  {r.education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {education.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                        >
+                  <ul className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
+                    {r.education.items.map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex h-[184px] flex-col items-center justify-center gap-1 rounded-xl border border-white/5 bg-secondary px-10 py-6 transition-colors hover:border-accent/40 lg:items-start"
+                      >
+                        {item.duration && (
                           <span className="text-accent">{item.duration}</span>
-                          <h3
-                            className="text-lg max-w-[260px] min-h-[60px] text-center lg:text-left"
-                            style={{ lineHeight: "1.45rem" }}
-                          >
-                            {item.degree}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            {/* dot */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.institution}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
+                        )}
+                        <h3
+                          className="min-h-[60px] max-w-[260px] text-center text-lg lg:text-left"
+                          style={{ lineHeight: "1.45rem" }}
+                        >
+                          {item.degree}
+                        </h3>
+                        <div className="flex items-center gap-3">
+                          <span className="h-[6px] w-[6px] rounded-full bg-accent"></span>
+                          <p className="text-white/60">{item.institution}</p>
+                        </div>
+                      </li>
+                    ))}
                   </ul>
                 </ScrollArea>
               </div>
             </TabsContent>
 
             {/* skills */}
-            <TabsContent value="skills" className="w-full h-full">
-              <div className="flex flex-col gap-[30px] mb-20">
+            <TabsContent value="skills" className="h-full w-full">
+              <div className="mb-20 flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[700px] text-white/60 mx-auto xl:mx-0">
-                    {skills.description}
+                  <h3 className="text-4xl font-bold text-metal">{r.skills.title}</h3>
+                  <p className="mx-auto max-w-[700px] text-white/60 xl:mx-0">
+                    {r.skills.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.skillList.map((skill, index) => {
-                    return (
-                      <li key={index}>
-                        <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                                {skill.icon}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </li>
-                    );
-                  })}
+                <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]">
+                  {skillList.map((skill, index) => (
+                    <li key={index}>
+                      <TooltipProvider delayDuration={100}>
+                        <Tooltip>
+                          <TooltipTrigger className="group flex h-[130px] w-full items-center justify-center rounded-xl border border-white/5 bg-secondary transition-colors hover:border-accent/40">
+                            <div className="text-5xl text-white/80 transition-colors duration-300 group-hover:text-accent">
+                              {skill.icon}
+                            </div>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p className="capitalize">{skill.name}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </TabsContent>
 
             {/* about */}
-            <TabsContent
-              value="about"
-              className="w-full text-center xl:text-left"
-            >
+            <TabsContent value="about" className="w-full text-center xl:text-left">
               <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {about.description}
+                <h3 className="text-4xl font-bold text-metal">{r.about.title}</h3>
+                <p className="mx-auto max-w-[600px] text-white/60 xl:mx-0">
+                  {r.about.description}
                 </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
-                  {about.info.map((item, index) => {
-                    return (
+                <ul className="mx-auto grid max-w-[620px] grid-cols-1 gap-y-6 xl:mx-0 xl:grid-cols-2">
+                  {r.about.info.map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center justify-center gap-4 xl:justify-start"
+                    >
+                      <span className="text-white/60">{item.fieldName}</span>
+                      <span className="text-lg">{item.fieldValue}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* languages */}
+                <div className="mt-4">
+                  <h4 className="mb-6 text-2xl font-bold text-metal">{r.languages.title}</h4>
+                  <ul className="mx-auto grid max-w-[620px] grid-cols-1 gap-4 sm:grid-cols-3 xl:mx-0">
+                    {r.languages.items.map((lang, index) => (
                       <li
                         key={index}
-                        className="flex items-center justify-center xl:justify-start gap-4"
+                        className="rounded-xl border border-white/5 bg-secondary px-4 py-4 text-center"
                       >
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
+                        <p className="text-lg">{lang.name}</p>
+                        <span className="text-sm text-accent">{lang.level}</span>
                       </li>
-                    );
-                  })}
-                </ul>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </TabsContent>
           </div>

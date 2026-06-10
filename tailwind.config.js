@@ -20,15 +20,26 @@ module.exports = {
       xl: "1200px",
     },
     fontFamily: {
-      primary: "var(--font-jetbrainsMono)",
+      primary: "var(--font-lora)",
+      mono: "var(--font-jetbrainsMono)",
     },
     extend: {
       colors: {
-        primary: "#1c1c22",
+        primary: "#050505",
+        secondary: "#111113",
+        surface: "#1a1a1e",
         accent: {
-          DEFAULT: "#00ff99",
-          hover: "#00e187",
+          DEFAULT: "#b79cff",
+          hover: "#9a7deb",
         },
+        accent2: {
+          DEFAULT: "#00f0ff",
+          hover: "#00c4d1",
+        },
+      },
+      backgroundImage: {
+        "accent-gradient": "linear-gradient(135deg, #b79cff 0%, #00f0ff 100%)",
+        "metal-gradient": "linear-gradient(to bottom, #ffffff 0%, #cbd5e1 40%, #64748b 50%, #e2e8f0 60%, #ffffff 100%)",
       },
 
       keyframes: {
@@ -40,10 +51,25 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(16px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-18px)" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "center -200%" },
+          "100%": { backgroundPosition: "center 200%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-up": "fade-up 0.5s ease-out both",
+        "float-slow": "float-slow 6s ease-in-out infinite",
+        "shimmer": "shimmer 4s linear infinite",
       },
     },
   },
