@@ -20,7 +20,8 @@ module.exports = {
       xl: "1200px",
     },
     fontFamily: {
-      primary: "var(--font-lora)",
+      primary: "var(--font-outfit)",
+      display: "var(--font-space)",
       mono: "var(--font-jetbrainsMono)",
     },
     extend: {
@@ -33,12 +34,12 @@ module.exports = {
           hover: "#9a7deb",
         },
         accent2: {
-          DEFAULT: "#00f0ff",
-          hover: "#00c4d1",
+          DEFAULT: "#6cb8f6",
+          hover: "#4a9fe8",
         },
       },
       backgroundImage: {
-        "accent-gradient": "linear-gradient(135deg, #b79cff 0%, #00f0ff 100%)",
+        "accent-gradient": "linear-gradient(135deg, #b79cff 0%, #6cb8f6 100%)",
         "metal-gradient": "linear-gradient(to bottom, #ffffff 0%, #cbd5e1 40%, #64748b 50%, #e2e8f0 60%, #ffffff 100%)",
       },
 
@@ -63,6 +64,10 @@ module.exports = {
           "0%": { backgroundPosition: "center -200%" },
           "100%": { backgroundPosition: "center 200%" },
         },
+        "blink": {
+          "0%, 50%": { opacity: "1" },
+          "50.01%, 100%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -70,6 +75,7 @@ module.exports = {
         "fade-up": "fade-up 0.5s ease-out both",
         "float-slow": "float-slow 6s ease-in-out infinite",
         "shimmer": "shimmer 4s linear infinite",
+        "caret": "blink 1.1s steps(1, end) infinite",
       },
     },
   },

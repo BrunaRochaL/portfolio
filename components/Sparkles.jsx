@@ -1,22 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HiSparkles } from "react-icons/hi2";
 import { PiSparkleFill, PiStarFourFill } from "react-icons/pi";
-import { BsStars } from "react-icons/bs";
 
 // Each sparkle: position (%), size, icon, color and animation timing.
+// Palette limited to the brand accents (purple + cyan) for a calm, cohesive feel.
 const sparkles = [
-  { top: "8%", left: "6%", size: 28, Icon: HiSparkles, color: "#00f0ff", delay: 0, duration: 3.2 },
-  { top: "18%", left: "88%", size: 22, Icon: PiSparkleFill, color: "#b79cff", delay: 0.6, duration: 3.8 },
-  { top: "30%", left: "14%", size: 16, Icon: PiStarFourFill, color: "#8b5cf6", delay: 1.1, duration: 2.8 },
-  { top: "12%", left: "46%", size: 18, Icon: BsStars, color: "#b79cff", delay: 0.3, duration: 4.2 },
-  { top: "62%", left: "4%", size: 20, Icon: PiSparkleFill, color: "#00f0ff", delay: 1.5, duration: 3.4 },
-  { top: "72%", left: "92%", size: 26, Icon: HiSparkles, color: "#b79cff", delay: 0.9, duration: 3.9 },
-  { top: "84%", left: "22%", size: 16, Icon: PiStarFourFill, color: "#8b5cf6", delay: 0.4, duration: 3.1 },
-  { top: "50%", left: "80%", size: 18, Icon: PiSparkleFill, color: "#00f0ff", delay: 1.8, duration: 4.5 },
-  { top: "40%", left: "62%", size: 14, Icon: PiStarFourFill, color: "#b79cff", delay: 0.7, duration: 2.6 },
-  { top: "90%", left: "70%", size: 20, Icon: BsStars, color: "#00f0ff", delay: 1.2, duration: 3.7 },
+  { top: "10%", left: "8%", size: 16, Icon: PiSparkleFill, color: "#b79cff", delay: 0, duration: 4.4 },
+  { top: "20%", left: "86%", size: 14, Icon: PiStarFourFill, color: "#6cb8f6", delay: 0.8, duration: 5 },
+  { top: "15%", left: "48%", size: 12, Icon: PiSparkleFill, color: "#b79cff", delay: 0.4, duration: 5.4 },
+  { top: "66%", left: "6%", size: 13, Icon: PiStarFourFill, color: "#6cb8f6", delay: 1.4, duration: 4.8 },
+  { top: "70%", left: "90%", size: 16, Icon: PiSparkleFill, color: "#b79cff", delay: 1, duration: 5.2 },
+  { top: "44%", left: "72%", size: 11, Icon: PiStarFourFill, color: "#6cb8f6", delay: 0.6, duration: 4.2 },
 ];
 
 const Sparkles = () => {
@@ -24,14 +19,14 @@ const Sparkles = () => {
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       {/* soft floating glows */}
       <motion.div
-        className="absolute left-[8%] top-[15%] h-40 w-40 rounded-full bg-accent/20 blur-3xl"
-        animate={{ y: [0, -24, 0], opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[8%] top-[15%] h-52 w-52 rounded-full bg-accent/25 blur-3xl"
+        animate={{ y: [0, -24, 0], opacity: [0.35, 0.6, 0.35] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute right-[10%] top-[40%] h-52 w-52 rounded-full bg-accent2/20 blur-3xl"
-        animate={{ y: [0, 28, 0], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute right-[10%] top-[38%] h-64 w-64 rounded-full bg-[#22d3ee]/25 blur-3xl"
+        animate={{ y: [0, 28, 0], opacity: [0.3, 0.55, 0.3] }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* twinkling sparkle icons */}
@@ -42,10 +37,10 @@ const Sparkles = () => {
           style={{ top, left, color }}
           initial={{ opacity: 0, scale: 0.4 }}
           animate={{
-            opacity: [0, 1, 0.2, 1, 0],
-            scale: [0.4, 1, 0.7, 1, 0.4],
-            rotate: [0, 25, -15, 10, 0],
-            y: [0, -10, 0],
+            opacity: [0, 0.7, 0.15, 0.7, 0],
+            scale: [0.5, 1, 0.8, 1, 0.5],
+            rotate: [0, 15, -8, 6, 0],
+            y: [0, -8, 0],
           }}
           transition={{
             duration,
@@ -54,7 +49,7 @@ const Sparkles = () => {
             ease: "easeInOut",
           }}
         >
-          <Icon size={size} style={{ filter: `drop-shadow(0 0 8px ${color})` }} />
+          <Icon size={size} style={{ filter: `drop-shadow(0 0 6px ${color})` }} />
         </motion.div>
       ))}
     </div>

@@ -14,7 +14,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
+import { FaEnvelope, FaWhatsapp, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import Toast from "@/components/Toast";
@@ -31,9 +32,33 @@ const Contact = () => {
   const [toast, setToast] = useState(null);
 
   const info = [
-    { icon: <FaPhoneAlt />, title: c.info.phoneBr, description: "(+55) 53 98479 8240" },
-    { icon: <FaWhatsapp />, title: c.info.phonePt, description: "(+351) 963 917 649" },
-    { icon: <FaEnvelope />, title: c.info.email, description: EMAIL },
+    {
+      icon: <FaWhatsapp />,
+      title: c.info.whatsapp,
+      description: "(+55) 53 98479 8240",
+      href: "https://wa.me/5553984798240",
+      external: true,
+    },
+    {
+      icon: <FaLinkedinIn />,
+      title: c.info.linkedin,
+      description: "/in/brunarochal",
+      href: "https://www.linkedin.com/in/brunarochal/",
+      external: true,
+    },
+    {
+      icon: <FaGithub />,
+      title: "GitHub",
+      description: "/BrunaRochaL",
+      href: "https://github.com/BrunaRochaL",
+      external: true,
+    },
+    {
+      icon: <FaEnvelope />,
+      title: c.info.email,
+      description: EMAIL,
+      href: `mailto:${EMAIL}`,
+    },
   ];
 
   const handleSubmit = async (event) => {
@@ -131,16 +156,25 @@ const Contact = () => {
           </div>
           {/* info */}
           <div className="order-1 mb-8 flex flex-1 items-center xl:order-none xl:mb-0 xl:justify-end">
-            <ul className="flex flex-col gap-10">
+            <ul className="flex w-full flex-col gap-5 xl:max-w-[420px]">
               {info.map((item, index) => (
-                <li key={index} className="flex items-center gap-6">
-                  <div className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-secondary text-accent xl:h-[72px] xl:w-[72px]">
-                    <div className="text-[28px]">{item.icon}</div>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-white/60">{item.title}</p>
-                    <h3 className="text-xl">{item.description}</h3>
-                  </div>
+                <li key={index}>
+                  <Link
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    className="group flex items-center gap-5 rounded-xl border border-white/5 bg-secondary/40 p-4 transition-colors hover:border-accent/40"
+                  >
+                    <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-md bg-secondary text-accent transition-colors group-hover:bg-accent-gradient group-hover:text-primary xl:h-[60px] xl:w-[60px]">
+                      <div className="text-[24px]">{item.icon}</div>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm text-white/60">{item.title}</p>
+                      <h3 className="truncate text-lg transition-colors group-hover:text-accent">
+                        {item.description}
+                      </h3>
+                    </div>
+                  </Link>
                 </li>
               ))}
             </ul>

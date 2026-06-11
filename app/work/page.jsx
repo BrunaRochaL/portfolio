@@ -22,11 +22,10 @@ import { useLanguage } from "@/lib/i18n/LanguageProvider";
 const projects = [
   {
     num: "01",
-    category: "The Brooklyn Brothers",
-    stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }, { name: "Bootstrap" }],
-    image: "/assets/work/projeto1.png",
-    live: "https://brunarochal.github.io/TheBrooklynBrothers/",
-    github: "https://github.com/BrunaRochaL/TheBrooklynBrothers",
+    category: "Portfólio",
+    stack: [{ name: "Next.js" }, { name: "React" }, { name: "Tailwind CSS" }, { name: "Framer Motion" }, { name: "i18n" }, { name: "SEO" }],
+    image: "/assets/work/portfolio.svg",
+    github: "https://github.com/BrunaRochaL/portfolio",
   },
   {
     num: "02",
@@ -37,11 +36,9 @@ const projects = [
   },
   {
     num: "03",
-    category: "Cafeteria Java",
-    stack: [{ name: "Figma" }, { name: "UI/UX" }],
-    image: "/assets/work/java.png",
-    live: "https://www.figma.com/proto/rCrXcuDn1aN2DYfjmf9gBP/Projeto---Cafeteria-Java?page-id=0%3A1&node-id=1-297&viewport=694%2C-2160%2C0.55&t=ISohyu9JCVIvbCY9-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A297",
-    github: "#",
+    category: "Plataforma de Gestão",
+    stack: [{ name: "React" }, { name: "TypeScript" }, { name: "Vite" }, { name: "Redux" }, { name: "Tailwind CSS" }],
+    image: "/assets/work/platform.svg",
   },
   {
     num: "04",
@@ -53,26 +50,27 @@ const projects = [
   },
   {
     num: "05",
-    category: "Projeto Colosseum",
-    stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "Bootstrap" }],
-    image: "/assets/work/colosseum.png",
-    live: "https://brunarochal.github.io/ProjetoColosseum/",
-    github: "https://github.com/BrunaRochaL/ProjetoColosseum",
+    category: "Landing Page Responsiva",
+    stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }, { name: "Bootstrap" }],
+    image: "/assets/work/projeto1.png",
+    live: "https://brunarochal.github.io/TheBrooklynBrothers/",
+    github: "https://github.com/BrunaRochaL/TheBrooklynBrothers",
   },
   {
     num: "06",
-    category: "Pousada SolMar",
-    stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }, { name: "Bootstrap" }],
-    image: "/assets/work/fullstack.png",
-    live: "https://brunarochal.github.io/ProjetoFullStack/",
-    github: "https://github.com/BrunaRochaL/ProjetoFullStack",
+    category: "API de Comissões",
+    stack: [{ name: "Python" }, { name: "Flask" }, { name: "Pandas" }, { name: "Pytest" }, { name: "SQLite" }],
+    image: "/assets/work/aawz.svg",
+    live: "https://documenter.getpostman.com/view/30268092/2sA3e1A9t2",
+    github: "https://github.com/BrunaRochaL/desafio-tecnico-aawz",
   },
   {
     num: "07",
-    category: "Gerenciamento de dados",
-    stack: [{ name: "Python" }, { name: "Flask" }, { name: "Pandas" }, { name: "Pytest" }, { name: "SQLite" }, { name: "AWS" }],
-    image: "/assets/work/python.png",
-    github: "https://github.com/BrunaRochaL/desafio-tecnico-aawz",
+    category: "Cafeteria Java",
+    stack: [{ name: "Figma" }, { name: "UI/UX" }],
+    image: "/assets/work/java.png",
+    live: "https://www.figma.com/proto/rCrXcuDn1aN2DYfjmf9gBP/Projeto---Cafeteria-Java?page-id=0%3A1&node-id=1-297&viewport=694%2C-2160%2C0.55&t=ISohyu9JCVIvbCY9-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A297",
+    github: "#",
   },
 ];
 
@@ -101,7 +99,7 @@ const Work = () => {
               </div>
               {/* category */}
               <h2 className="text-[42px] font-bold capitalize leading-none text-white transition-all duration-500 group-hover:text-accent">
-                {project.category}
+                {t.work.titles?.[project.num] ?? project.category}
               </h2>
               {/* description */}
               <p className="text-white/60">{t.work.descriptions[project.num]}</p>
@@ -163,7 +161,11 @@ const Work = () => {
                       <Image
                         src={item.image}
                         fill
-                        className="object-cover"
+                        className={
+                          item.image.endsWith(".svg")
+                            ? "object-contain p-2"
+                            : "object-cover"
+                        }
                         alt={item.category}
                       />
                     </div>

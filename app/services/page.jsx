@@ -31,7 +31,7 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="group flex flex-1 flex-col justify-center gap-6 rounded-2xl border border-white/5 bg-secondary/40 p-8 transition-colors hover:border-accent/30"
+                className="group flex flex-1 flex-col justify-center gap-6 rounded-2xl border border-white/5 bg-secondary/40 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_0_30px_-12px_rgba(183,156,255,0.5)]"
               >
                 <div className="flex w-full items-center justify-between">
                   <div className="text-5xl font-extrabold text-metal transition-all duration-500">

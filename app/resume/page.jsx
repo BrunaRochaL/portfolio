@@ -41,34 +41,59 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
-const skillList = [
-  { icon: <SiReact />, name: "React" },
-  { icon: <SiTypescript />, name: "TypeScript" },
-  { icon: <SiJavascript />, name: "JavaScript" },
-  { icon: <SiHtml5 />, name: "HTML5" },
-  { icon: <SiCss3 />, name: "CSS3" },
-  { icon: <SiSass />, name: "SCSS" },
-  { icon: <SiTailwindcss />, name: "Tailwind CSS" },
-  { icon: <SiBootstrap />, name: "Bootstrap" },
-  { icon: <SiRedux />, name: "Redux" },
-  { icon: <SiVite />, name: "Vite" },
-  { icon: <SiVitest />, name: "Vitest" },
-  { icon: <SiNodedotjs />, name: "Node.js" },
-  { icon: <SiNestjs />, name: "NestJS" },
-  { icon: <SiAdonisjs />, name: "AdonisJS" },
-  { icon: <SiPython />, name: "Python" },
-  { icon: <SiDjango />, name: "Django" },
-  { icon: <SiFlask />, name: "Flask" },
-  { icon: <SiPostgresql />, name: "PostgreSQL" },
-  { icon: <SiMysql />, name: "MySQL" },
-  { icon: <SiMongodb />, name: "MongoDB" },
-  { icon: <SiRedis />, name: "Redis" },
-  { icon: <SiDocker />, name: "Docker" },
-  { icon: <SiAmazonaws />, name: "AWS" },
-  { icon: <SiMicrosoftazure />, name: "Azure" },
-  { icon: <SiDatadog />, name: "Datadog" },
-  { icon: <SiGit />, name: "Git" },
-  { icon: <SiBitbucket />, name: "Bitbucket" },
+const skillGroups = [
+  {
+    key: "frontend",
+    skills: [
+      { icon: <SiReact />, name: "React" },
+      { icon: <SiTypescript />, name: "TypeScript" },
+      { icon: <SiJavascript />, name: "JavaScript" },
+      { icon: <SiHtml5 />, name: "HTML5" },
+      { icon: <SiCss3 />, name: "CSS3" },
+      { icon: <SiSass />, name: "SCSS" },
+      { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+      { icon: <SiBootstrap />, name: "Bootstrap" },
+      { icon: <SiRedux />, name: "Redux" },
+      { icon: <SiVite />, name: "Vite" },
+      { icon: <SiVitest />, name: "Vitest" },
+    ],
+  },
+  {
+    key: "backend",
+    skills: [
+      { icon: <SiNodedotjs />, name: "Node.js" },
+      { icon: <SiNestjs />, name: "NestJS" },
+      { icon: <SiAdonisjs />, name: "AdonisJS" },
+      { icon: <SiPython />, name: "Python" },
+      { icon: <SiDjango />, name: "Django" },
+      { icon: <SiFlask />, name: "Flask" },
+    ],
+  },
+  {
+    key: "data",
+    skills: [
+      { icon: <SiPostgresql />, name: "PostgreSQL" },
+      { icon: <SiMysql />, name: "MySQL" },
+      { icon: <SiMongodb />, name: "MongoDB" },
+      { icon: <SiRedis />, name: "Redis" },
+    ],
+  },
+  {
+    key: "devops",
+    skills: [
+      { icon: <SiDocker />, name: "Docker" },
+      { icon: <SiAmazonaws />, name: "AWS" },
+      { icon: <SiMicrosoftazure />, name: "Azure" },
+      { icon: <SiDatadog />, name: "Datadog" },
+    ],
+  },
+  {
+    key: "tools",
+    skills: [
+      { icon: <SiGit />, name: "Git" },
+      { icon: <SiBitbucket />, name: "Bitbucket" },
+    ],
+  },
 ];
 
 const Resume = () => {
@@ -102,21 +127,36 @@ const Resume = () => {
                 <p className="mx-auto max-w-[700px] text-white/60 xl:mx-0">
                   {r.experience.description}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
+                <ScrollArea className="h-[460px] pr-4">
+                  <ul className="flex flex-col gap-6 text-left">
                     {r.experience.items.map((item, index) => (
                       <li
                         key={index}
-                        className="flex h-[184px] flex-col items-center justify-center gap-1 rounded-xl border border-white/5 bg-secondary px-10 py-6 transition-colors hover:border-accent/40 lg:items-start"
+                        className="rounded-xl border border-white/5 bg-secondary p-6 transition-colors hover:border-accent/40 xl:p-7"
                       >
-                        <span className="text-accent">{item.duration}</span>
-                        <h3 className="min-h-[60px] max-w-[260px] text-center text-xl lg:text-left">
-                          {item.position}
-                        </h3>
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <h3 className="text-xl font-semibold">{item.position}</h3>
+                          <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs text-accent">
+                            {item.duration}
+                          </span>
+                        </div>
+                        <div className="mt-1 flex items-center gap-3">
                           <span className="h-[6px] w-[6px] rounded-full bg-accent"></span>
                           <p className="text-white/60">{item.company}</p>
                         </div>
+                        {item.bullets && (
+                          <ul className="mt-4 flex flex-col gap-2">
+                            {item.bullets.map((bullet, bIndex) => (
+                              <li
+                                key={bIndex}
+                                className="flex gap-3 text-sm leading-relaxed text-white/70"
+                              >
+                                <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-accent/70"></span>
+                                <span>{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -131,26 +171,38 @@ const Resume = () => {
                 <p className="mx-auto max-w-[900px] text-white/60 xl:mx-0">
                   {r.education.description}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
+                <ScrollArea className="h-[460px] pr-4">
+                  <ul className="grid grid-cols-1 gap-6 text-left lg:grid-cols-2">
                     {r.education.items.map((item, index) => (
                       <li
                         key={index}
-                        className="flex h-[184px] flex-col items-center justify-center gap-1 rounded-xl border border-white/5 bg-secondary px-10 py-6 transition-colors hover:border-accent/40 lg:items-start"
+                        className="flex flex-col rounded-xl border border-white/5 bg-secondary p-6 transition-colors hover:border-accent/40 xl:p-7"
                       >
                         {item.duration && (
-                          <span className="text-accent">{item.duration}</span>
+                          <span className="w-fit rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs text-accent">
+                            {item.duration}
+                          </span>
                         )}
-                        <h3
-                          className="min-h-[60px] max-w-[260px] text-center text-lg lg:text-left"
-                          style={{ lineHeight: "1.45rem" }}
-                        >
+                        <h4 className="mt-3 text-lg font-semibold leading-snug">
                           {item.degree}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          <span className="h-[6px] w-[6px] rounded-full bg-accent"></span>
+                        </h4>
+                        <div className="mt-2 flex items-center gap-3">
+                          <span className="h-[6px] w-[6px] shrink-0 rounded-full bg-accent"></span>
                           <p className="text-white/60">{item.institution}</p>
                         </div>
+                        {item.bullets && (
+                          <ul className="mt-4 flex flex-col gap-2">
+                            {item.bullets.map((bullet, bIndex) => (
+                              <li
+                                key={bIndex}
+                                className="flex gap-3 text-sm leading-relaxed text-white/70"
+                              >
+                                <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-accent/70"></span>
+                                <span>{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -167,24 +219,33 @@ const Resume = () => {
                     {r.skills.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]">
-                  {skillList.map((skill, index) => (
-                    <li key={index}>
-                      <TooltipProvider delayDuration={100}>
-                        <Tooltip>
-                          <TooltipTrigger className="group flex h-[130px] w-full items-center justify-center rounded-xl border border-white/5 bg-secondary transition-colors hover:border-accent/40">
-                            <div className="text-5xl text-white/80 transition-colors duration-300 group-hover:text-accent">
-                              {skill.icon}
-                            </div>
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p className="capitalize">{skill.name}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </li>
+                <div className="flex flex-col gap-8">
+                  {skillGroups.map((group) => (
+                    <div key={group.key}>
+                      <h4 className="mb-4 text-xs uppercase tracking-[2px] text-accent">
+                        {r.skills.categories?.[group.key] ?? group.key}
+                      </h4>
+                      <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-6 xl:gap-5">
+                        {group.skills.map((skill, index) => (
+                          <li key={index}>
+                            <TooltipProvider delayDuration={100}>
+                              <Tooltip>
+                                <TooltipTrigger className="group flex h-[96px] w-full items-center justify-center rounded-xl border border-white/5 bg-secondary transition-colors hover:border-accent/40">
+                                  <div className="text-4xl text-white/80 transition-colors duration-300 group-hover:text-accent">
+                                    {skill.icon}
+                                  </div>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                  <p className="capitalize">{skill.name}</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </TabsContent>
 
@@ -195,14 +256,16 @@ const Resume = () => {
                 <p className="mx-auto max-w-[600px] text-white/60 xl:mx-0">
                   {r.about.description}
                 </p>
-                <ul className="mx-auto grid max-w-[620px] grid-cols-1 gap-y-6 xl:mx-0 xl:grid-cols-2">
+                <ul className="mx-auto grid max-w-[680px] grid-cols-1 gap-4 sm:grid-cols-2 xl:mx-0">
                   {r.about.info.map((item, index) => (
                     <li
                       key={index}
-                      className="flex items-center justify-center gap-4 xl:justify-start"
+                      className="rounded-xl border border-white/5 bg-secondary px-5 py-4 text-left transition-colors hover:border-accent/40"
                     >
-                      <span className="text-white/60">{item.fieldName}</span>
-                      <span className="text-lg">{item.fieldValue}</span>
+                      <p className="text-xs uppercase tracking-[1px] text-white/40">
+                        {item.fieldName}
+                      </p>
+                      <p className="mt-1 text-white/90">{item.fieldValue}</p>
                     </li>
                   ))}
                 </ul>

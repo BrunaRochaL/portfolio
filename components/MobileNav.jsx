@@ -5,12 +5,14 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import Logo from "./Logo";
 
 const navItems = [
   { key: "home", path: "/" },
   { key: "services", path: "/services" },
   { key: "resume", path: "/resume" },
   { key: "work", path: "/work" },
+  { key: "contact", path: "/contact" },
 ];
 
 const MobileNav = () => {
@@ -24,13 +26,9 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="flex flex-col border-white/10 bg-secondary">
         {/* logo */}
-        <div className="mb-32 mt-20 text-center text-2xl">
-          <Link href="/">
-            <h1 className="font-mono text-4xl font-extrabold tracking-tighter">
-              <span className="text-accent">&lt;</span>
-              <span className="text-metal">br</span>
-              <span className="text-accent">/&gt;</span>
-            </h1>
+        <div className="mb-32 mt-20 flex justify-center">
+          <Link href="/" aria-label="Bruna Rocha — início">
+            <Logo />
           </Link>
         </div>
         {/* nav */}

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none">
+  <defs>
+    <linearGradient id="pl-accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b79cff"/>
+      <stop offset="1" stop-color="#00f0ff"/>
+    </linearGradient>
+    <linearGradient id="pl-metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#94a3b8"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <radialGradient id="pl-glow1" cx="0.18" cy="0.85" r="0.6">
+      <stop offset="0" stop-color="#00f0ff" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pl-glow2" cx="0.85" cy="0.15" r="0.6">
+      <stop offset="0" stop-color="#b79cff" stop-opacity="0.33"/>
+      <stop offset="1" stop-color="#b79cff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pl-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="750" fill="#08080a"/>
+  <rect width="1200" height="750" fill="url(#pl-grid)"/>
+  <rect width="1200" height="750" fill="url(#pl-glow1)"/>
+  <rect width="1200" height="750" fill="url(#pl-glow2)"/>
+
+  <!-- dashboard card -->
+  <rect x="150" y="150" width="900" height="460" rx="20" fill="#111113" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <text x="190" y="225" font-family="'JetBrains Mono', monospace" font-size="14" fill="#00f0ff" letter-spacing="3">WEB · MANAGEMENT · DASHBOARD</text>
+  <text x="190" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" fill="url(#pl-metal)">Plataforma de Gestão</text>
+  <rect x="190" y="320" width="300" height="3" rx="2" fill="url(#pl-accent)"/>
+
+  <!-- mini stat cards -->
+  <g>
+    <rect x="190" y="360" width="200" height="110" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.06"/>
+    <text x="210" y="400" font-family="'JetBrains Mono', monospace" font-size="13" fill="#7a7a85">Agenda</text>
+    <text x="210" y="445" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#d8ccff">128</text>
+
+    <rect x="406" y="360" width="200" height="110" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.06"/>
+    <text x="426" y="400" font-family="'JetBrains Mono', monospace" font-size="13" fill="#7a7a85">Registros</text>
+    <text x="426" y="445" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#bff7fb">2.4k</text>
+
+    <!-- chart -->
+    <rect x="622" y="360" width="238" height="110" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.06"/>
+    <polyline points="642,445 678,420 714,432 750,398 786,410 822,378" fill="none" stroke="url(#pl-accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="822" cy="378" r="4" fill="#00f0ff"/>
+  </g>
+
+  <!-- tech badges -->
+  <g font-family="'JetBrains Mono', monospace" font-size="16">
+    <rect x="190" y="500" width="118" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#b79cff" stroke-opacity="0.4"/>
+    <text x="249" y="525" text-anchor="middle" fill="#d8ccff">React</text>
+    <rect x="320" y="500" width="148" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#b79cff" stroke-opacity="0.4"/>
+    <text x="394" y="525" text-anchor="middle" fill="#d8ccff">TypeScript</text>
+    <rect x="480" y="500" width="90" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#00f0ff" stroke-opacity="0.4"/>
+    <text x="525" y="525" text-anchor="middle" fill="#bff7fb">Vite</text>
+    <rect x="582" y="500" width="108" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#00f0ff" stroke-opacity="0.4"/>
+    <text x="636" y="525" text-anchor="middle" fill="#bff7fb">Redux</text>
+  </g>
+</svg>

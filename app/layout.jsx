@@ -1,8 +1,10 @@
-import { JetBrains_Mono, Lora } from "next/font/google";
+import { JetBrains_Mono, Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 // components
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -11,25 +13,67 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
 });
 
-const lora = Lora({
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-outfit",
+});
+
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-lora",
+  variable: "--font-space",
 });
 
 export const metadata = {
-  title: "Bruna Rocha — Full Stack Software Engineer",
+  // When you deploy, set this to your real domain so social previews and
+  // canonical URLs resolve correctly, e.g. new URL("https://brunarocha.dev").
+  // metadataBase: new URL("https://your-domain.com"),
+  title: {
+    default: "Bruna Rocha — Full Stack Software Engineer",
+    template: "%s · Bruna Rocha",
+  },
   description:
-    "Portfólio de Bruna Rocha, engenheira de software full stack especializada em React, TypeScript, Node.js e Python.",
+    "Engenheira de software full stack especializada em React, TypeScript, Node.js e Python. Do front-end ao back-end, com foco em código limpo, testes e boas experiências de uso.",
+  keywords: [
+    "Bruna Rocha",
+    "Full Stack Developer",
+    "Software Engineer",
+    "Engenheira de Software",
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Node.js",
+    "Python",
+    "Django",
+    "Tailwind CSS",
+    "Front-end",
+    "Back-end",
+    "UI/UX",
+    "Portugal",
+  ],
+  authors: [{ name: "Bruna Rocha Lourenço" }],
+  creator: "Bruna Rocha Lourenço",
+  openGraph: {
+    title: "Bruna Rocha — Full Stack Software Engineer",
+    description:
+      "Do front-end ao back-end com React, TypeScript, Node.js e Python. Veja projetos, experiência e habilidades.",
+    type: "website",
+    locale: "pt_BR",
+    alternateLocale: ["en_US", "es_ES"],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt">
-      <body className={`${lora.variable} ${jetbrainsMono.variable}`}>
+      <body className={`${outfit.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
         <LanguageProvider>
+          <ScrollProgress />
           <Header />
           <main>{children}</main>
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

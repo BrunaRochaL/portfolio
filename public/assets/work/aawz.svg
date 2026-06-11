@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none">
+  <defs>
+    <linearGradient id="aawz-accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b79cff"/>
+      <stop offset="1" stop-color="#00f0ff"/>
+    </linearGradient>
+    <linearGradient id="aawz-metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#94a3b8"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <radialGradient id="aawz-glow1" cx="0.2" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#b79cff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#b79cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aawz-glow2" cx="0.85" cy="0.85" r="0.6">
+      <stop offset="0" stop-color="#00f0ff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="aawz-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="750" fill="#08080a"/>
+  <rect width="1200" height="750" fill="url(#aawz-grid)"/>
+  <rect width="1200" height="750" fill="url(#aawz-glow1)"/>
+  <rect width="1200" height="750" fill="url(#aawz-glow2)"/>
+
+  <!-- terminal window -->
+  <rect x="150" y="170" width="900" height="420" rx="18" fill="#111113" stroke="#ffffff" stroke-opacity="0.08"/>
+  <rect x="150" y="170" width="900" height="56" rx="18" fill="#16161a"/>
+  <rect x="150" y="206" width="900" height="20" fill="#16161a"/>
+  <circle cx="184" cy="198" r="7" fill="#b79cff"/>
+  <circle cx="210" cy="198" r="7" fill="#5b5b66"/>
+  <circle cx="236" cy="198" r="7" fill="#5b5b66"/>
+  <rect x="300" y="188" width="540" height="20" rx="10" fill="#0c0c0e"/>
+  <text x="320" y="203" font-family="'JetBrains Mono', monospace" font-size="13" fill="#7a7a85">aawz-api</text>
+
+  <!-- window content -->
+  <text x="196" y="300" font-family="'JetBrains Mono', monospace" font-size="14" fill="#00f0ff" letter-spacing="3">RESTFUL API</text>
+  <text x="196" y="372" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-size="50" font-weight="700" fill="url(#aawz-metal)">Comissoes &amp; Vendas</text>
+  <rect x="196" y="410" width="160" height="3" rx="2" fill="url(#aawz-accent)"/>
+
+  <!-- tech badges -->
+  <g font-family="'JetBrains Mono', monospace" font-size="16">
+    <rect x="196" y="452" width="100" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#b79cff" stroke-opacity="0.4"/>
+    <text x="246" y="477" text-anchor="middle" fill="#d8ccff">Python</text>
+
+    <rect x="308" y="452" width="90" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#b79cff" stroke-opacity="0.4"/>
+    <text x="353" y="477" text-anchor="middle" fill="#d8ccff">Flask</text>
+
+    <rect x="410" y="452" width="100" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#00f0ff" stroke-opacity="0.4"/>
+    <text x="460" y="477" text-anchor="middle" fill="#bff7fb">Pandas</text>
+
+    <rect x="522" y="452" width="100" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#00f0ff" stroke-opacity="0.4"/>
+    <text x="572" y="477" text-anchor="middle" fill="#bff7fb">Pytest</text>
+
+    <rect x="634" y="452" width="100" height="40" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#00f0ff" stroke-opacity="0.4"/>
+    <text x="684" y="477" text-anchor="middle" fill="#bff7fb">SQLite</text>
+  </g>
+
+  <text x="196" y="547" font-family="'JetBrains Mono', monospace" font-size="14" fill="#5f5f6a">&lt;/&gt; RESTful API - Data Processing - Testing</text>
+</svg>

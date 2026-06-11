@@ -3,25 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent/70 ring-offset-2 ring-offset-primary;
+  }
   body {
-    @apply font-primary bg-primary text-white leading-loose;
-    background-image: 
-      radial-gradient(circle at 15% 20%, rgba(183, 156, 255, 0.12), transparent 35%),
-      radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.12), transparent 40%),
-      radial-gradient(circle at 50% 90%, rgba(183, 156, 255, 0.08), transparent 50%),
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    @apply font-primary bg-primary text-white leading-relaxed antialiased;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(167, 139, 250, 0.18), transparent 40%),
+      radial-gradient(circle at 86% 12%, rgba(34, 211, 238, 0.16), transparent 44%),
+      radial-gradient(circle at 50% 88%, rgba(124, 160, 246, 0.13), transparent 52%),
+      linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
     background-attachment: fixed;
   }
   .h1 {
-    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+    @apply font-display text-[48px] xl:text-[80px] leading-[1.05] font-semibold tracking-tight;
   }
   .h2 {
-    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+    @apply font-display text-[36px] xl:text-[48px] leading-[1.1] font-semibold tracking-tight;
   }
   .h3 {
-    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+    @apply font-display text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
   }
   .text-outline {
     -webkit-text-stroke: 1px #ffffff;
@@ -37,18 +43,19 @@
     @apply bg-accent-gradient bg-clip-text text-transparent;
   }
   .text-metal {
-    @apply bg-metal-gradient bg-clip-text text-transparent animate-shimmer;
+    @apply font-display bg-clip-text text-transparent animate-shimmer;
+    background-image: linear-gradient(110deg, #ffffff 0%, #e7e9ff 34%, #c4d2ff 50%, #e7e9ff 66%, #ffffff 100%);
     background-size: 200% 100%;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0 0 12px rgba(140, 165, 255, 0.28));
   }
   .glow-accent {
-    box-shadow: 0 0 30px -5px rgba(183, 156, 255, 0.4), 0 0 40px -10px rgba(0, 240, 255, 0.3);
+    box-shadow: 0 0 30px -5px rgba(183, 156, 255, 0.4), 0 0 40px -10px rgba(108, 184, 246, 0.32);
   }
 
   .btn-y2k {
     background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%), rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 15px rgba(0, 240, 255, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 18px rgba(108, 184, 246, 0.22);
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
@@ -61,7 +68,7 @@
     transform: translateX(-100%) skewX(-15deg);
   }
   .btn-y2k:hover, .btn-y2k[data-state="active"] {
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 25px rgba(183, 156, 255, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 0 32px rgba(183, 156, 255, 0.5);
     border-color: rgba(255, 255, 255, 0.4);
     background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%), rgba(255, 255, 255, 0.1);
   }

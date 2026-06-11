@@ -4,10 +4,9 @@ import CountUp from "react-countup";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const statValues = [
-  { num: 3 },
-  { num: 12 },
-  { num: 25 },
-  { num: 320 },
+  { num: 3, suffix: "+" },
+  { num: 25, suffix: "+" },
+  { num: 3, suffix: "" },
 ];
 
 const Stats = () => {
@@ -28,7 +27,7 @@ const Stats = () => {
                   end={item.num}
                   duration={4}
                   delay={0.2}
-                  suffix="+"
+                  suffix={item.suffix}
                   className="text-4xl font-extrabold text-metal xl:text-6xl"
                 />
                 <p

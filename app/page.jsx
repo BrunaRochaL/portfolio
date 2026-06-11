@@ -15,9 +15,9 @@ import Sparkles from "@/components/Sparkles";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const featuredProjects = [
+  { num: "01", category: "Portfólio", image: "/assets/work/portfolio.svg" },
   { num: "02", category: "Preveni", image: "/assets/work/preveni.png" },
-  { num: "04", category: "DataShield", image: "/assets/work/datashield.png" },
-  { num: "01", category: "The Brooklyn Brothers", image: "/assets/work/projeto1.png" },
+  { num: "03", category: "Plataforma de Gestão", image: "/assets/work/platform.svg" },
 ];
 
 const reveal = {
@@ -61,16 +61,28 @@ const Home = () => {
                 <span className="mb-3 block text-xs uppercase tracking-[2px] text-white/40">
                   {t.home.highlightsTitle}
                 </span>
-                <ul className="flex flex-wrap justify-center gap-2 xl:justify-start">
+                <motion.ul
+                  className="flex flex-wrap justify-center gap-2 xl:justify-start"
+                  initial="hidden"
+                  animate="show"
+                  variants={{
+                    hidden: {},
+                    show: { transition: { staggerChildren: 0.06, delayChildren: 0.25 } },
+                  }}
+                >
                   {t.home.highlights.map((tech, index) => (
-                    <li
+                    <motion.li
                       key={index}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/80"
+                      variants={{
+                        hidden: { opacity: 0, y: 10 },
+                        show: { opacity: 1, y: 0 },
+                      }}
+                      className="cursor-default rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/80 transition-colors hover:border-accent/40 hover:text-accent"
                     >
                       {tech}
-                    </li>
+                    </motion.li>
                   ))}
-                </ul>
+                </motion.ul>
               </div>
               {/* btn and socials */}
               <div className="flex flex-col items-center gap-8 xl:flex-row">
@@ -160,7 +172,7 @@ const Home = () => {
           {t.services.items.map((service, index) => (
             <div
               key={index}
-              className="group flex flex-col gap-4 rounded-2xl border border-white/5 bg-secondary/40 p-8 transition-colors hover:border-accent/30"
+              className="group flex flex-col gap-4 rounded-2xl border border-white/5 bg-secondary/40 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_0_30px_-12px_rgba(183,156,255,0.5)]"
             >
               <div className="flex items-center justify-between">
                 <span className="text-4xl font-extrabold text-outline text-transparent transition-all group-hover:text-outline-hover">
@@ -193,31 +205,43 @@ const Home = () => {
           </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {featuredProjects.map((project) => (
-            <Link
-              key={project.num}
-              href="/work"
-              className="group relative block h-[300px] overflow-hidden rounded-2xl border border-white/5"
-            >
-              <Image
-                src={project.image}
-                fill
-                alt={project.category}
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 w-full p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold">{project.category}</h3>
-                  </div>
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-accent-gradient group-hover:text-primary">
+          {featuredProjects.map((project) => {
+            const isSvg = project.image.endsWith(".svg");
+            return (
+              <Link
+                key={project.num}
+                href="/work"
+                className="group relative block h-[300px] overflow-hidden rounded-2xl border border-white/10 bg-secondary/40 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_0_30px_-8px_rgba(183,156,255,0.5)]"
+              >
+                <Image
+                  src={project.image}
+                  fill
+                  alt={project.category}
+                  className={`transition-transform duration-500 group-hover:scale-105 ${
+                    isSvg ? "object-contain p-1" : "object-cover"
+                  }`}
+                />
+                {!isSvg && (
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" />
+                    <div className="absolute bottom-0 left-0 w-full p-6">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-xl font-bold">{project.category}</h3>
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-accent-gradient group-hover:text-primary">
+                          <FiArrowUpRight />
+                        </span>
+                      </div>
+                    </div>
+                  </>
+                )}
+                {isSvg && (
+                  <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-accent-gradient group-hover:text-primary">
                     <FiArrowUpRight />
                   </span>
-                </div>
-              </div>
-            </Link>
-          ))}
+                )}
+              </Link>
+            );
+          })}
         </div>
       </motion.section>
 
