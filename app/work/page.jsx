@@ -72,10 +72,18 @@ const projects = [
     live: "https://www.figma.com/proto/rCrXcuDn1aN2DYfjmf9gBP/Projeto---Cafeteria-Java?page-id=0%3A1&node-id=1-297&viewport=694%2C-2160%2C0.55&t=ISohyu9JCVIvbCY9-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A297",
     github: "#",
   },
+  {
+    num: "08",
+    category: "API de Notificações",
+    stack: [{ name: "Node.js" }, { name: "Express" }, { name: "Telegram Bot API" }, { name: "Vercel" }, { name: "CORS" }],
+    image: "/assets/work/visit-notifier.svg",
+    live: "https://visit-notifier-api.vercel.app",
+    github: "https://github.com/BrunaRochaL/visit-notifier-api",
+  },
 ];
 
 const Work = () => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const [project, setProject] = useState(projects[0]);
 
   const handleSlideChange = (swiper) => {
@@ -99,10 +107,12 @@ const Work = () => {
               </div>
               {/* category */}
               <h2 className="text-[42px] font-bold capitalize leading-none text-white transition-all duration-500 group-hover:text-accent">
-                {t.work.titles?.[project.num] ?? project.category}
+                {t.work.titles[project.num]}
               </h2>
               {/* description */}
-              <p className="text-white/60">{t.work.descriptions[project.num]}</p>
+              <p key={`${locale}-${project.num}`} className="text-white/60">
+                {t.work.descriptions[project.num]}
+              </p>
               {/* stack */}
               <ul className="flex flex-wrap gap-4">
                 {project.stack.map((item, index) => (
