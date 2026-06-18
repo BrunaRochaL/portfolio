@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
+import VisitTracker from "@/components/VisitTracker";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -70,6 +71,7 @@ export default function RootLayout({ children }) {
     <html lang="pt">
       <body className={`${outfit.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
         <LanguageProvider>
+          <VisitTracker />
           <ScrollProgress />
           <Header />
           <main>{children}</main>
