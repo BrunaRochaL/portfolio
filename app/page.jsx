@@ -210,7 +210,7 @@ const Home = () => {
             return (
               <Link
                 key={project.num}
-                href="/work"
+                href={`/work?project=${parseInt(project.num, 10) - 1}`}
                 className="group relative block h-[300px] overflow-hidden rounded-2xl border border-white/10 bg-secondary/40 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_0_30px_-8px_rgba(183,156,255,0.5)]"
               >
                 <Image
@@ -227,18 +227,13 @@ const Home = () => {
                     <div className="absolute bottom-0 left-0 w-full p-6">
                       <div className="flex items-center justify-between">
                         <h3 className="text-xl font-bold">{project.category}</h3>
-                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-accent-gradient group-hover:text-primary">
-                          <FiArrowUpRight />
-                        </span>
                       </div>
                     </div>
                   </>
                 )}
-                {isSvg && (
-                  <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-accent-gradient group-hover:text-primary">
-                    <FiArrowUpRight />
-                  </span>
-                )}
+                <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-accent-gradient group-hover:text-primary">
+                  <FiArrowUpRight />
+                </span>
               </Link>
             );
           })}

@@ -18,6 +18,8 @@ import Link from "next/link";
 import Image from "next/image";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const projects = [
   {
@@ -82,9 +84,13 @@ const projects = [
   },
 ];
 
-const Work = () => {
+const WorkContent = () => {
   const { t, locale } = useLanguage();
-  const [project, setProject] = useState(projects[0]);
+  const searchParams = useSearchParams();
+  const projectParam = searchParams.get("project");
+  const initialIndex = projectParam ? parseInt(projectParam, 10) : 0;
+  
+  const [project, setProject] = useState(projects[initialIndex] || projects[0]);
 
   const handleSlideChange = (swiper) => {
     setProject(projects[swiper.activeIndex]);
@@ -158,6 +164,7 @@ const Work = () => {
           </div>
           <div className="w-full xl:w-[50%]">
             <Swiper
+              initialSlide={initialIndex}
               spaceBetween={30}
               slidesPerView={1}
               className="mb-12 xl:h-[520px]"
@@ -191,6 +198,14 @@ const Work = () => {
         </div>
       </div>
     </motion.section>
+  );
+};
+
+const Work = () => {
+  return (
+    <Suspense>
+      <WorkContent />
+    </Suspense>
   );
 };
 
